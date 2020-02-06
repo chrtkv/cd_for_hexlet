@@ -2,13 +2,20 @@
 
 # Change directory based on url
 
-import sys
 import os
+import sys
 
 
 def get_path(url):
     parent = "/home/kirill/hexlet-exercise-kit"
 
+    # fixes for wrong repo names
+    url = url.replace('postgresql', 'pg')
+    url = url.replace('sequences', 'js-sequences')
+    url = url.replace('compound_data', 'js-data')
+    url = url.replace('pair_implementation', 'pairs_implementation')
+    url = url.replace('introduction_to_programming', 'intro_to_programming_ru')
+    
     course_name = url.split('/')[4]
     course_name_underscore = course_name.replace('-', '_')
 
